@@ -2,9 +2,6 @@ package fr.istic.tpjpa.domain;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,38 +17,26 @@ public class Home {
 	private int superficie;
 	private String adress;
 	private String ip;
-	
-	
 	private List<Equipements> equipements = new ArrayList<Equipements>();
-	
 	private Person proprietaire;
-	
-	
-	
 	public Home() {
-		
     }
 	
 	public Home(int superficie,String adress, String ip){
 		this.setSuperficie(superficie);
 		this.setAdress(adress);
 		this.setIp(ip);
-		
 	}
+	
 	@Id
 
     @GeneratedValue
-
     public Long getId() {
-
         return id;
-
     }
 
     public void setId(Long id) {
-
         this.id = id;
-
     }
 
 	public int getSuperficie() {
@@ -77,6 +62,7 @@ public class Home {
 	public void setIp(String ip) {
 		this.ip = ip;
 	}
+	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	public Person getProprietaire(){
 		return proprietaire;
@@ -101,9 +87,5 @@ public class Home {
 	    return "home [id=" + id + ", superficie=" + superficie + ", adress="
 
 	            + adress+", ip="+ip+"]";
-
 	}
-
-
-	
 	}
