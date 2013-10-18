@@ -1,9 +1,7 @@
 package fr.istic.tpjpa.domain;
-
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,10 +21,8 @@ public class Person {
 
 //	private List<Person> amis = new ArrayList<Person>();
 	private List<Home> proprietees = new ArrayList<Home>();
-
 	public Person(Long id, String prenom, String nom, String facebook,
 			Date anniversaire, String genre) {
-
 		this.id = id;
 		this.setPrenom(prenom);
 		this.setNom(nom);
@@ -36,27 +32,21 @@ public class Person {
 	}
 
 	public Person() {
-
 	}
 
 	public Person(String prenom, String nom) {
 		this.setPrenom(prenom);
 		this.setNom(nom);
-
 	}
 
 	@Id
 	@GeneratedValue
 	public Long getId() {
-
 		return id;
-
 	}
 
 	public void setId(Long id) {
-
 		this.id = id;
-
 	}
 
 	public String getPrenom() {
@@ -98,7 +88,7 @@ public class Person {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-//
+
 //	public List<Person> getAmis() {
 //		return amis;
 //	}
