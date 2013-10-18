@@ -17,7 +17,6 @@ import fr.istic.tpjpa.domain.Person;
 public class JpaTest {
 
 	private static EntityManager manager;
-
 	public JpaTest(EntityManager manager) {
 		this.manager = manager;
 	}
@@ -40,7 +39,6 @@ public class JpaTest {
 		Person per2 = new Person();
 
 		Home hm1 = new Home();
-
 		Home hm2 = new Home();
 
 		// TODO run request
@@ -69,7 +67,7 @@ public class JpaTest {
 			manager.persist(dude);
 
 			Home dudeHome = new Home(14, "Une rue".toString(),
-					"192.168.1.24".toString());
+					"192.168.1.10".toString());
 			manager.persist(dudeHome);
 
 			dudeHome.setProprietaire(dude);
@@ -83,18 +81,6 @@ public class JpaTest {
 					dudeHome);
 			manager.persist(Ventilateur);
 
-			/*
-			 * Equipements VentilateurRotatif = new
-			 * Equipements("VentilateurRotatif", "10W", dudeHome);
-			 * manager.persist(VentilateurRotatif);
-			 * 
-			 * Equipements PCIA = new Equipements("PCIA", "200W", dudeHome);
-			 * manager.persist(PCIA);
-			 */// #1452 - Cannot add or update a child row: a foreign key
-				// constraint fails (`base_10007924`.`Equipements`, CONSTRAINT
-				// `FK2BF439A05844A209` FOREIGN KEY (`id`) REFERENCES `Home`
-				// (`id`))
-
 			List<Person> L = new ArrayList<Person>();
 
 			Person dude2 = new Person("Pierre", "Dupont");
@@ -104,11 +90,10 @@ public class JpaTest {
 			manager.persist(dude3);
 
 			L.add(dude2);
-
 			L.add(dude3);
 
 			//dude.setAmis(L);
-			manager.persist(new Person("random", "dude"));
+			manager.persist(new Person("Marc", "dude"));
 		}
 	}
 
