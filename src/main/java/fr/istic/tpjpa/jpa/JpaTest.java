@@ -33,15 +33,16 @@ public class JpaTest {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 
-		// TODO create entity
 
+		// TODO create entity
 		Person per1 = new Person();
 		Person per2 = new Person();
 
 		Home hm1 = new Home();
 		Home hm2 = new Home();
 
-		// TODO run request
+
+		// TODO persist entity
 		manager.persist(per1);
 		manager.persist(per2);
 		manager.persist(hm1);
@@ -51,6 +52,7 @@ public class JpaTest {
 		listAmis();
 		TheEnd();
 		tx.commit();
+
 
 		// TODO run request
 		System.out.println(".. done");
