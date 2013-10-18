@@ -110,6 +110,8 @@ public class JpaTest {
 		}
 	}
 
+
+	// relation d'héritage
 	private static void TheEnd() {
 		CriteriaBuilder criteriaBuilder = manager.getCriteriaBuilder();
 		// assuming a is an Integer
