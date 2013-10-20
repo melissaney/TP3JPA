@@ -12,3 +12,5 @@ Classe java : Equipements, Home, Person
 
 Personne => Amis
          => Maison => Equipements
+         
+Test ok
